@@ -1,3 +1,5 @@
+
+// Indeterminate Arguments
 function sumar(...args) {
     console.log(args);
     sum = 0;
@@ -8,3 +10,4 @@ function sumar(...args) {
 }
 
 sumar(2, 3, 4, 5);
+
