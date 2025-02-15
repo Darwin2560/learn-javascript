@@ -1,29 +1,35 @@
-class Persona{
+console.clear();
 
-    constructor(nombre, edad){
-        this.nombre = nombre;
-        this.edad = edad;
+class Person {
+
+    constructor(name, birthYear){
+        this.name = name;
+        this.yearOfBirth = birthYear;
     }
 
-    destallePersona(){
-        console.log(`Nombre: ${this.nombre},\ndad: ${this.edad}`);
+    getDetails = () => {
+        return `Name: ${this.name} and
+        Age: ${2025 - this.yearOfBirth}`
+    } 
+}
+
+// inheritance
+class Pilot extends Person{
+
+    constructor(name, birthYear, exp, type, license){
+        super(name, birthYear);
+        this.experience = exp;
+        this.type = type;
+        this.license = license;
+    }
+
+    getData = () => {
+        console.log(`${this.getDetails()} and 
+        Experience ${this.experience} and 
+        Type: ${this.type}`);
     }
 }
 
-// Herencia de la clase Persona a la clase Empleados
-class Empleado extends Persona{
-
-    constructor(nombre, edad, puesto, sueldo){
-        super(nombre, edad);
-        this.puesto = puesto;
-        this.sueldo = sueldo;
-    }
-
-    destallePersona(){
-        super.destallePersona();
-        console.log(`Puesto: ${this.puesto},\nSueldo: ${this.sueldo}`);
-    }
-}
-
-const e1 = new Empleado('Juan', 25, 'Desarrollador', '5000 USD');
-e1.destallePersona();
+const dar = new Pilot('Darwin Ruiz', 2000, 8, 'private', 'TC1234');
+console.log(dar);
+dar.getData();
