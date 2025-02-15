@@ -1,18 +1,15 @@
-class Persona{
+class Person {
 
-    constructor(nombre, edad){
-        this.nombre = nombre;
-        this.edad = edad;
+    constructor(name, birthYear){
+        this.name = name;
+        this.yearOfBirth = birthYear;
     }
 
-    imprimer(){
-        console.log(`Nombre: ${this.nombre}, Edad: ${this.edad}`);
-    }
+    getDetails = () => {
+        return `Name: ${this.name} and
+        Age: ${2025 - this.yearOfBirth}`
+    } 
 }
 
-const p1 = new Persona('Juan', 25);
-const p2 = new Persona('Roel', 34);
-
-console.log(p1);
-console.log(p2);
-p1.imprimer();
+const john = new Person('John', 2000)
+console.log(john.getDetails());
